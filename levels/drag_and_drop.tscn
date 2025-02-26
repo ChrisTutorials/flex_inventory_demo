@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci753hy32ffun"]
+[gd_scene load_steps=3 format=3 uid="uid://ci753hy32ffun"]
 
 [ext_resource type="PackedScene" uid="uid://cdbbur6alyr0r" path="res://templates/flex_inventory/ui/shop/shop_ui.tscn" id="1_t0hy5"]
+[ext_resource type="PackedScene" uid="uid://c7cptwib50xyk" path="res://templates/flex_inventory/ui/player/player_item_container_ui.tscn" id="2_nytvd"]
 
 [node name="DragAndDropTest" type="Control"]
 layout_mode = 3
@@ -16,3 +17,5 @@ offset_left = 805.0
 offset_top = 37.0
 offset_right = 1105.0
 offset_bottom = 537.0
+
+[node name="PlayerItemContainerUI" parent="." instance=ExtResource("2_nytvd")]

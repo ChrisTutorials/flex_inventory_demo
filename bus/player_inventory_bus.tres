@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="InventoryBus" load_steps=2 format=3 uid="uid://c2rhl5pftg1a7"]
+
+[ext_resource type="Script" uid="uid://bw1hlo5mpqo77" path="res://addons/flex_inventory/bus/inventory_bus.gd" id="1_arjcc"]
+
+[resource]
+script = ExtResource("1_arjcc")
+metadata/_custom_type_script = "uid://bw1hlo5mpqo77"
