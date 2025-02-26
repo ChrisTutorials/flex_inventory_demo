@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci753hy32ffun"]
+
+[ext_resource type="PackedScene" uid="uid://cdbbur6alyr0r" path="res://templates/flex_inventory/ui/shop/shop_ui.tscn" id="1_t0hy5"]
+
+[node name="DragAndDropTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopUI" parent="." instance=ExtResource("1_t0hy5")]
+layout_mode = 0
+offset_left = 805.0
+offset_top = 37.0
+offset_right = 1105.0
+offset_bottom = 537.0

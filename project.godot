@@ -11,12 +11,17 @@ config_version=5
 [application]
 
 config/name="Flex Inventory Demo"
+run/main_scene="uid://dg43j8dxfdoip"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+FlexState="*res://addons/flex_inventory/flex_state.tscn"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
+enabled=PackedStringArray("res://addons/collapse_folders/plugin.cfg", "res://addons/flex_inventory/plugin.cfg", "res://addons/gdUnit4/plugin.cfg")
 
 [rendering]
 
