@@ -1,0 +1,6 @@
+[submodule "addons/flex_inventory"]
+	path = addons/flex_inventory
+	url = git@github.com:ChrisTutorials/flex_inventory_demo.git
+[submodule "test/flex_inventory"]
+	path = test/flex_inventory
+	url = git@github.com:ChrisTutorials/flex_inventory_test.git
