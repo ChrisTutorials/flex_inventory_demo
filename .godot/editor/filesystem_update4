@@ -16,3 +16,5 @@ res://addons/flex_inventory/ui/resource_display/total_item_count_view.gd
 res://inventory/player_inventory.tres
 res://inventory/items/wood_item.tres
 res://inventory/items/stone_item.tres
+res://templates/flex_inventory/ui/shop/shop_ui.tscn
+res://inventory/types/shop_type.tres
