@@ -3,7 +3,7 @@
 	url = git@github.com:ChrisTutorials/flex_inventory_test.git
 [submodule "addons/flex_inventory"]
 	path = addons/flex_inventory
-	url = https://github.com/ChrisTutorials/flex_inventory
+	u	rl = https://github.com/ChrisTutorials/flex_inventory
 [submodule "templates/flex_inventory"]
 	path = templates/flex_inventory
 	url = git@github.com:ChrisTutorials/flex_inventory_templates.git
