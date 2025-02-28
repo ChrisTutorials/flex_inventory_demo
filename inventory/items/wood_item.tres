@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="FlexItem" load_steps=3 format=3 uid="uid://dulu278yhkx8d"]
+[gd_resource type="Resource" script_class="FlexItem" load_steps=4 format=3 uid="uid://dulu278yhkx8d"]
 
+[ext_resource type="Texture2D" uid="uid://b1e22qjlop2dq" path="res://art/gatherers_exterior/art/resources/wood_brown.png" id="1_00ib6"]
 [ext_resource type="Script" uid="uid://wh04qt1e4bwn" path="res://addons/flex_inventory/items/flex_item.gd" id="1_qbkus"]
 [ext_resource type="Script" uid="uid://1qpi64qijkbr" path="res://addons/flex_inventory/items/item_tag.gd" id="2_00ib6"]
 
 [resource]
 script = ExtResource("1_qbkus")
-display_name = ""
+display_name = "Wood"
+icon = ExtResource("1_00ib6")
 tags = Array[ExtResource("2_00ib6")]([])
-value = 0.0
-stack_maximum = 1
+value = 1.0
+stack_maximum = 9999
 metadata/_custom_type_script = "uid://wh04qt1e4bwn"

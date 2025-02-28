@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="FlexItem" load_steps=3 format=3 uid="uid://cyahsbj2waht2"]
+[gd_resource type="Resource" script_class="FlexItem" load_steps=4 format=3 uid="uid://cyahsbj2waht2"]
 
+[ext_resource type="Texture2D" uid="uid://balhgnmb5ebwe" path="res://art/gatherers_exterior/art/resources/rock_item.png" id="1_irb80"]
 [ext_resource type="Script" uid="uid://wh04qt1e4bwn" path="res://addons/flex_inventory/items/flex_item.gd" id="1_pfdm0"]
 [ext_resource type="Script" uid="uid://1qpi64qijkbr" path="res://addons/flex_inventory/items/item_tag.gd" id="2_irb80"]
 
 [resource]
 script = ExtResource("1_pfdm0")
-display_name = ""
+display_name = "Stone"
+icon = ExtResource("1_irb80")
 tags = Array[ExtResource("2_irb80")]([])
-value = 0.0
-stack_maximum = 1
+value = 2.0
+stack_maximum = 9999
 metadata/_custom_type_script = "uid://wh04qt1e4bwn"
