@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci753hy32ffun"]
+[gd_scene load_steps=4 format=3 uid="uid://ci753hy32ffun"]
 
+[ext_resource type="Theme" uid="uid://b6ugis8psfywx" path="res://settings/demo_theme.tres" id="1_8megp"]
 [ext_resource type="PackedScene" uid="uid://cdbbur6alyr0r" path="res://templates/flex_inventory/ui/shop/shop_ui.tscn" id="1_t0hy5"]
 [ext_resource type="PackedScene" uid="uid://c7cptwib50xyk" path="res://templates/flex_inventory/ui/player/player_item_container_ui.tscn" id="2_nytvd"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_8megp")
 
 [node name="ShopUI" parent="." instance=ExtResource("1_t0hy5")]
 layout_mode = 0
@@ -19,8 +21,10 @@ offset_right = 1105.0
 offset_bottom = 537.0
 
 [node name="PlayerItemContainerUI" parent="." instance=ExtResource("2_nytvd")]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_left = 47.0
 offset_top = 44.0
-offset_right = 447.0
-offset_bottom = 444.0
+offset_right = 47.0
+offset_bottom = 44.0
+scale = Vector2(1.01401, 0.992278)
