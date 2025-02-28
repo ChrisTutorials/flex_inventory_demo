@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FlexItem" load_steps=3 format=3 uid="uid://cyahsbj2waht2"]
+
+[ext_resource type="Script" uid="uid://wh04qt1e4bwn" path="res://addons/flex_inventory/items/flex_item.gd" id="1_pfdm0"]
+[ext_resource type="Script" uid="uid://1qpi64qijkbr" path="res://addons/flex_inventory/items/item_tag.gd" id="2_irb80"]
+
+[resource]
+script = ExtResource("1_pfdm0")
+display_name = ""
+tags = Array[ExtResource("2_irb80")]([])
+value = 0.0
+stack_maximum = 1
+metadata/_custom_type_script = "uid://wh04qt1e4bwn"
