@@ -7,3 +7,6 @@
 [submodule "templates/flex_inventory"]
 	path = templates/flex_inventory
 	url = git@github.com:ChrisTutorials/flex_inventory_templates.git
+[submodule "art/gatherers_exterior"]
+	path = art/gatherers_exterior
+	url = https://github.com/ChrisTutorials/gatherers_exterior_godot
