@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://b6ugis8psfywx" path="res://settings/demo_theme.tres" id="1_8megp"]
 [ext_resource type="PackedScene" uid="uid://cdbbur6alyr0r" path="res://templates/flex_inventory/ui/shop/shop_ui.tscn" id="1_t0hy5"]
-[ext_resource type="PackedScene" uid="uid://c7cptwib50xyk" path="res://templates/flex_inventory/ui/player/player_item_container_ui.tscn" id="2_nytvd"]
+[ext_resource type="PackedScene" uid="uid://c7cptwib50xyk" path="res://templates/flex_inventory/ui/player/player_inventory_view.tscn" id="2_nytvd"]
 [ext_resource type="Resource" uid="uid://3f6rt1jncq85" path="res://inventory/player_inventory.tres" id="4_wao6l"]
 
 [node name="DragAndDropTest" type="Control"]

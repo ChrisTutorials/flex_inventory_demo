@@ -10,3 +10,6 @@ res://addons/flex_inventory/ui/resource_display/item_container_view.gd
 res://templates/flex_inventory/ui/shop/cost_display.gd
 res://templates/flex_inventory/ui/shop/purchase_view.tscn
 res://addons/flex_inventory/ui/stack_view.gd
+res://addons/flex_inventory/ui/inventory_view.gd
+res://templates/flex_inventory/ui/player/player_inventory_view.tscn
+res://test/flex_inventory/test_cost_display.gd
