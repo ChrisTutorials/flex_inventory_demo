@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 FlexState="*res://addons/flex_inventory/flex_state.tscn"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/collapse_folders/plugin.cfg", "res://addons/flex_inventory/plugin.cfg", "res://addons/gdUnit4/plugin.cfg")

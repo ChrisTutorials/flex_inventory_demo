@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="ItemContainerType" load_steps=3 format=3 uid="uid://db5y1ie78lq5n"]
+[gd_resource type="Resource" script_class="ItemContainerType" load_steps=4 format=3 uid="uid://db5y1ie78lq5n"]
 
 [ext_resource type="Script" uid="uid://1qpi64qijkbr" path="res://addons/flex_inventory/items/item_tag.gd" id="1_da4dv"]
+[ext_resource type="Texture2D" uid="uid://dsdwtnc0rntxh" path="res://art/board_game/pouch_add.png" id="2_0pl5p"]
 [ext_resource type="Script" uid="uid://dp6q7lh63jeiy" path="res://addons/flex_inventory/inventory/item_container_type.gd" id="2_ek6sb"]
 
 [resource]
 script = ExtResource("2_ek6sb")
 name = &"Backpack"
+icon = ExtResource("2_0pl5p")
 allowed_tags = Array[ExtResource("1_da4dv")]([])
 size = 12
 allow_multiple_stacks = true
-allow_add_overflow = false
+allow_partial_adds = true
 has_unlimited_space = false
 empty_mode = 0
 metadata/_custom_type_script = "uid://dp6q7lh63jeiy"
