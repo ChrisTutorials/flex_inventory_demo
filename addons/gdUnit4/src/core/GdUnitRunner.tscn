@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://belidlfknh74r"]
 
-[ext_resource type="Script" path="res://addons/gdUnit4/src/core/GdUnitRunner.gd" id="1"]
-[ext_resource type="Script" path="res://addons/gdUnit4/src/network/GdUnitTcpClient.gd" id="2"]
+[ext_resource type="Script" uid="uid://d05c5fdu3oj2b" path="res://addons/gdUnit4/src/core/GdUnitRunner.gd" id="1"]
+[ext_resource type="Script" uid="uid://5qok2k8a76ha" path="res://addons/gdUnit4/src/network/GdUnitTcpClient.gd" id="2"]
 
 [node name="Control" type="Node"]
 script = ExtResource("1")
