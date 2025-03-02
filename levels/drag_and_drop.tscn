@@ -17,16 +17,16 @@ script = ExtResource("2_wao6l")
 
 [node name="ShopUI" parent="." instance=ExtResource("1_t0hy5")]
 layout_mode = 0
-offset_left = 805.0
-offset_top = 37.0
-offset_right = 1105.0
-offset_bottom = 537.0
+offset_left = 431.0
+offset_top = 48.0
+offset_right = 731.0
+offset_bottom = 548.0
 
 [node name="PlayerInventoryView" parent="." instance=ExtResource("2_nytvd")]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
-offset_left = 47.0
-offset_top = 44.0
-offset_right = 47.0
-offset_bottom = 44.0
+offset_left = 65.0
+offset_top = 42.0
+offset_right = 151.0
+offset_bottom = 126.0
 scale = Vector2(1.01401, 0.992278)
