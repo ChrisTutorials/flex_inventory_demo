@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_qbkus")
-display_name = "Wood"
+name = "Wood"
 icon = ExtResource("1_00ib6")
 tags = Array[ExtResource("2_00ib6")]([])
 value = 1.0

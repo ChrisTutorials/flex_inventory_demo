@@ -1,4 +1,8 @@
+VBoxContainer
+Label
+InventoryView
+Control
+TabContainer
 Node
 InventoryController
-Label
 MarginContainer

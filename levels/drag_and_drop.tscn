@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci753hy32ffun"]
+[gd_scene load_steps=6 format=3 uid="uid://ci753hy32ffun"]
 
 [ext_resource type="Theme" uid="uid://b6ugis8psfywx" path="res://settings/demo_theme.tres" id="1_8megp"]
 [ext_resource type="PackedScene" uid="uid://cdbbur6alyr0r" path="res://templates/flex_inventory/ui/shop/shop_ui.tscn" id="1_t0hy5"]
 [ext_resource type="PackedScene" uid="uid://c7cptwib50xyk" path="res://templates/flex_inventory/ui/player/player_inventory_view.tscn" id="2_nytvd"]
 [ext_resource type="Script" uid="uid://tc3e5x58wy8e" path="res://levels/drag_and_drop.gd" id="2_wao6l"]
+[ext_resource type="Resource" uid="uid://3f6rt1jncq85" path="res://inventory/player_inventory.tres" id="5_pkr3m"]
 
 [node name="DragAndDropTest" type="Control"]
 layout_mode = 3
@@ -30,3 +31,10 @@ offset_top = 42.0
 offset_right = 151.0
 offset_bottom = 126.0
 scale = Vector2(1.01401, 0.992278)
+inventory = ExtResource("5_pkr3m")
+
+[node name="MoneyLabel" parent="PlayerInventoryView/VBoxContainer" index="1"]
+text = "Money: %d"
+inventory = ExtResource("5_pkr3m")
+
+[editable path="PlayerInventoryView"]

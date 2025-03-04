@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_pfdm0")
-display_name = "Stone"
+name = "Stone"
 icon = ExtResource("1_irb80")
 tags = Array[ExtResource("2_irb80")]([])
 value = 2.0
