@@ -1,5 +1,7 @@
 res://levels/drag_and_drop.tscn
 res://inventory/player_inventory.tres
+res://addons/flex_inventory/shop/shop.gd
+res://test/flex_inventory/test_shop.gd
 res://loader.tscn
 res://templates/flex_inventory/ui/player/player_inventory_view.tscn
 res://templates/flex_inventory/ui/item_container_view.tscn
@@ -7,16 +9,8 @@ res://templates/flex_inventory/ui/resource_display/stack_view.tscn
 res://templates/flex_inventory/ui/shop/shop_ui.tscn
 res://templates/flex_inventory/ui/shop/purchase_view.tscn
 res://templates/flex_inventory/ui/shop/buy_back_view.tscn
-res://addons/flex_inventory/shop/shop.gd
-res://addons/flex_inventory/ui/stack_view.gd
-res://addons/flex_inventory/ui/inventory_view.gd
-res://addons/flex_inventory/ui/resource_display/item_container_view.gd
 res://addons/flex_inventory/data/items_transfer.gd
-res://addons/flex_inventory/items/flex_item.gd
-res://inventory/items/stone_item.tres
-res://inventory/items/wood_item.tres
-res://addons/flex_inventory/ui/item_list/container_display_list.gd
-res://addons/flex_inventory/ui/popups/transfer_amount_selector.gd
+res://addons/flex_inventory/inventory/flex_inventory.gd
+res://addons/flex_inventory/ui/inventory_view.gd
 res://test/flex_inventory/test_flex_inventory.gd
-res://test/flex_inventory/test_item_container_view.gd
-res://addons/flex_inventory/inventory/item_container.gd
+res://test/flex_inventory/test_flex_inventory_item_count_with_tag.gd
