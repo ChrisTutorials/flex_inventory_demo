@@ -29,6 +29,6 @@ metadata/_custom_type_script = "uid://dfoiqel6lgbf7"
 
 [resource]
 script = ExtResource("4_cwv8g")
-containers = Array[ExtResource("1_fi1x0")]([SubResource("Resource_7vomf")])
+containers = [SubResource("Resource_7vomf")]
 money = 0.0
 metadata/_custom_type_script = "uid://ccbvkadn5e0hg"
