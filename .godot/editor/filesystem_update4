@@ -10,3 +10,6 @@ res://templates/flex_inventory/ui/shop/shop_ui.tscn
 res://templates/flex_inventory/ui/shop/purchase_view.tscn
 res://templates/flex_inventory/ui/shop/buy_back_view.tscn
 res://addons/flex_inventory/inventory/item_container.gd
+res://test/flex_inventory/test_drag_transfer.gd
+res://test/flex_inventory/test_flex_stack.gd
+res://addons/flex_inventory/items/flex_stack.gd
