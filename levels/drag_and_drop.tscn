@@ -33,6 +33,9 @@ offset_bottom = 126.0
 scale = Vector2(1.01401, 0.992278)
 inventory = ExtResource("5_pkr3m")
 
+[node name="InventoryController" parent="PlayerInventoryView" index="0" node_paths=PackedStringArray("inventory_view")]
+inventory_view = NodePath("..")
+
 [node name="MoneyLabel" parent="PlayerInventoryView/VBoxContainer" index="1"]
 text = "Money: %d"
 inventory = ExtResource("5_pkr3m")
