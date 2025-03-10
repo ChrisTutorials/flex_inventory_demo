@@ -33,6 +33,11 @@ folder_colors={
 "res://test/": "gray"
 }
 
+[gdunit4]
+
+settings/test/test_discovery=true
+ui/toolbar/run_overall=true
+
 [input]
 
 inventory={
