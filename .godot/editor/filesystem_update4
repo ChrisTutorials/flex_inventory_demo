@@ -14,3 +14,5 @@ res://addons/flex_inventory/data/flex_state.gd
 res://addons/flex_inventory/transfer/stack_selection.gd
 res://addons/flex_inventory/inventory/item_container.gd
 res://addons/flex_inventory/ui/view/stack_view.gd
+res://addons/flex_inventory/base/inventory_resource.gd
+res://addons/flex_inventory/items/flex_stack.gd
