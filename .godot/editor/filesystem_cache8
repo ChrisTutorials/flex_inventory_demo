@@ -29,7 +29,7 @@ inventory_bus.gd::GDScript::-1::1740591818::0::1::::InventoryBus<>Resource<>::
 ::res://addons/flex_inventory/data/::1740877523
 flex_list_item_data.gd::GDScript::-1::1740591397::0::1::::FlexListItemData<>RefCounted<>::
 flex_state.gd::GDScript::-1::1740591397::0::1::::<>Node<>::
-inventory_transfer.gd::GDScript::-1::1740827362::0::1::::InventoryTransfer<>Object<>::
+transfer.gd::GDScript::-1::1740827362::0::1::::StackTransfer<>Object<>::
 item_count_changed_data.gd::GDScript::-1::1740845787::0::1::::ItemCountChangedData<>Object<>::
 stack_move.gd::GDScript::-1::1740705902::0::1::::StackMove<>Object<>::
 trade.gd::GDScript::-1::1740591397::0::1::::Trade<>Object<>::

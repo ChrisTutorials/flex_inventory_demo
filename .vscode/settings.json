@@ -1,0 +1,11 @@
+{
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "[gdscript]": {
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false,
+        "editor.tabSize": 4
+    },
+    "github.copilot.editor.indentationMode": "tab"
+}
