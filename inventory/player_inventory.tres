@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FlexInventory" load_steps=12 format=3 uid="uid://3f6rt1jncq85"]
 
 [ext_resource type="Script" uid="uid://dfoiqel6lgbf7" path="res://addons/flex_inventory/inventory/item_container.gd" id="1_fi1x0"]
-[ext_resource type="Script" path="res://addons/flex_inventory/items/flex_stack.gd" id="2_65xq6"]
+[ext_resource type="Script" uid="uid://dkf0fyysgh1tc" path="res://addons/flex_inventory/items/flex_stack.gd" id="2_65xq6"]
 [ext_resource type="Resource" uid="uid://db5y1ie78lq5n" path="res://inventory/types/backpack_type.tres" id="3_3ih0p"]
 [ext_resource type="Resource" uid="uid://de64h25sarkvw" path="res://inventory/items/gold_item.tres" id="3_65xq6"]
 [ext_resource type="Resource" uid="uid://cyahsbj2waht2" path="res://inventory/items/stone_item.tres" id="3_cwv8g"]
@@ -32,7 +32,7 @@ metadata/_custom_type_script = "uid://dgswtaqij3g7h"
 [sub_resource type="Resource" id="Resource_fi1x0"]
 script = ExtResource("1_fi1x0")
 type = ExtResource("3_3ih0p")
-_slots = [SubResource("Resource_3ih0p"), SubResource("Resource_cwv8g"), SubResource("Resource_pu72b")]
+_slots = Array[ExtResource("2_65xq6")]([SubResource("Resource_3ih0p"), SubResource("Resource_cwv8g"), SubResource("Resource_pu72b")])
 metadata/_custom_type_script = "uid://dfoiqel6lgbf7"
 
 [resource]
