@@ -1,4 +1,3 @@
-res://addons/flex_inventory/inventory/flex_inventory.gd
 res://templates/flex_inventory/ui/shop/purchase_view.tscn
 res://inventory/player_inventory.tres
 res://loader.tscn
@@ -8,7 +7,9 @@ res://templates/flex_inventory/ui/item_container_view.tscn
 res://templates/flex_inventory/ui/resource_display/stack_view.tscn
 res://templates/flex_inventory/ui/shop/shop_ui.tscn
 res://templates/flex_inventory/ui/shop/buy_back_view.tscn
-res://addons/flex_inventory/inventory/item_container.gd
+res://test/flex_inventory/transfer/test_stack_redistribution_manager.gd
+res://test/flex_inventory/test_flex_stack.gd
 res://addons/flex_inventory/base/inventory_resource.gd
-res://test/flex_inventory/inventory/test_item_container.gd
 res://addons/flex_inventory/inventory/flex_stack.gd
+res://addons/flex_inventory/transfer/stack_redistribution_manager.gd
+res://test/flex_inventory/transfer/test_stack_transfer.gd
