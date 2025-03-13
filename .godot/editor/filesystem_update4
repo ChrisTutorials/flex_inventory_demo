@@ -11,3 +11,4 @@ res://templates/flex_inventory/ui/shop/buy_back_view.tscn
 res://addons/flex_inventory/inventory/item_container.gd
 res://addons/flex_inventory/base/inventory_resource.gd
 res://test/flex_inventory/inventory/test_item_container.gd
+res://addons/flex_inventory/inventory/flex_stack.gd
