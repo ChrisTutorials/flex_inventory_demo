@@ -385,13 +385,13 @@ func send(p_data : StackTransfer) -> bool:
 	#return OK
 	
 func _validate_transferer(transferer : Object) -> bool:
-	var no_problems = true
+	var no_issues = true
 	
 	if not transferer.has_method("receive"):
 		push_warning("Transferer " + str(transferer) + " has no receive(data : StackTransfer) -> Error method to accept StackTransfer")
-		no_problems = false
+		no_issues = false
 		
-	return no_problems
+	return no_issues
 ## Report data for bubbling up information about an illegal number of items belonging in a InventoryResource
 class_name IllegalCountReport
 extends RefCounted
@@ -917,9 +917,9 @@ signal slots_changed(slots: Array[FlexStack])
 		if type == value:
 			return
 		type = value
-		var problems = validate()
-		if not problems.is_empty():
-			for problem in problems:
+		var issues = validate()
+		if not issues.is_empty():
+			for problem in issues:
 				push_warning(problem)
 
 ## Material stack slots for the item_container [br][br]
@@ -955,9 +955,9 @@ func _init(p_type: ItemContainerType = null, p_parent: FlexInventory = null) -> 
 	root_changed.connect(_on_root_changed)  # Connect to root change signal
 	
 	# Validate initial setup
-	var problems = validate()
-	if not problems.is_empty():
-		for problem in problems:
+	var issues = validate()
+	if not issues.is_empty():
+		for problem in issues:
 			push_warning(problem)
 
 func _ready() -> void:
@@ -1192,46 +1192,46 @@ func get_item_count_with_tag(tag: ItemTag) -> int:
 ## Ensure the ItemContainer has proper setup
 ## Returns an array of problem descriptions
 func validate() -> Array[String]:
-	var problems: Array[String] = []
+	var issues: Array[String] = []
 	
 	if not type:
-		problems.append("No type assigned to ItemContainer %s" % resource_path)
-		return problems
+		issues.append("No type assigned to ItemContainer %s" % resource_path)
+		return issues
 	
 	# Validate stacks
 	for stack in _slots:
 		if not stack.validate():
-			problems.append("Stack %s failed validation" % stack.resource_name)
+			issues.append("Stack %s failed validation" % stack.resource_name)
 		
 		if stack.item_container != self:
-			problems.append("Stack %s has incorrect item_container reference" % stack.resource_name)
+			issues.append("Stack %s has incorrect item_container reference" % stack.resource_name)
 		
 		if stack.slot != _slots.find(stack):
-			problems.append("Stack %s has incorrect slot %d, expected %d" % [
+			issues.append("Stack %s has incorrect slot %d, expected %d" % [
 				stack.resource_name, 
 				stack.slot, 
 				_slots.find(stack)
 			])
 	
-	return problems
+	return issues
 
 ## Validates an item and amount for use in the item_container
 ## Returns true if valid, false otherwise
 func validate_item(item: FlexItem, amount: int) -> bool:
-	var no_problems = true
+	var no_issues = true
 	
 	if amount < 0 and not has_infinite(item):
 		push_warning("Negative amount to %s. If item_container %s has none of the item %s, it probably should not be in the item_container." % [resource_path, resource_path, item.resource_path])
-		no_problems = false
+		no_issues = false
 	if not item:
 		push_error("Null item in item_container %s" % resource_path)
-		no_problems = false
+		no_issues = false
 	if not does_it_allow(item):
 		var item_path: String = "NULL Item" if item == null else item.resource_path 
 		push_warning("Item not allowed: %s" % item_path)
-		no_problems = false
+		no_issues = false
 		
-	return no_problems
+	return no_issues
 
 ## Handles empty slots based on the ContainerType’s EmptyMode
 func handle_empty_space(p_stacks: Array[FlexStack]) -> void:
@@ -1883,25 +1883,25 @@ func trade(buy_data: StackTransfer, sell_data: StackTransfer) -> Trade:
 	
 ## Validate the state of the shop
 func validate() -> bool:
-	var no_problems = true
+	var no_issues = true
 	
 	if inventory_stock == null:
 		push_warning("No stock inventory defined.")
-		no_problems = false
+		no_issues = false
 	
 	#if buy_back_selection == null:
 		#push_warning("There is no [buy_back_selection] object.")
-		#no_problems = false
+		#no_issues = false
 		#
 	#if buy_selection == null:
 		#push_warning("There is no [buy_selection] object.")
-		#no_problems = false
+		#no_issues = false
 		
 	#if sell_selection == null:
 		#push_warning("There is no [sell_selection] object.")
-		#no_problems = false
+		#no_issues = false
 		#
-	return no_problems
+	return no_issues
 
 ## Set up all the needed objects for the shop to operate
 func _create_sub_objects():
@@ -2001,12 +2001,12 @@ func _on_shop_changed(p_shop : Shop):
 	shop = p_shop
 
 func validate():
-	var no_problems = true
+	var no_issues = true
 	
 	if(mouse_filter == MOUSE_FILTER_IGNORE):
 		push_warning("Unable to receive drop data because mouse filter is set to ignore.")
 	
-	return no_problems
+	return no_issues
 extends Label
 ## Shows the active shop name
 
@@ -2082,13 +2082,13 @@ func close():
 
 ## Ensures that the UI is ready to be used by checking critical components
 func validate() -> bool:
-	var no_problems = true
+	var no_issues = true
 
 	if close_button == null:
 		push_warning("No close button set on %s" % get_path())
-		no_problems = false
+		no_issues = false
 	
-	return no_problems
+	return no_issues
 
 ## Toggles visibility of the shop UI and shopper UI based on shop validity
 func _set_visibility(p_shop : Shop):
@@ -2465,21 +2465,21 @@ func _init(p_stack: FlexStack, p_amount: int):
 	stack = p_stack
 	amount = p_amount  # Setter handles clamping
 
-## Checks for potential problems and returns any found as an Array[String]
+## Checks for potential issues and returns any found as an Array[String]
 func validate() -> Array[String]:
-	var problems : Array[String] = []
+	var issues : Array[String] = []
 
 	if stack == null:
-		problems.append("Invalid stack set in selection")
-		return problems
+		issues.append("Invalid stack set in selection")
+		return issues
 	
 	if not stack.infinite && stack.count <= 0:
-		problems.append("Cannot select from empty stack")
+		issues.append("Cannot select from empty stack")
 	
 	if amount > stack.count:
-		problems.append("Cannot select more than stack count")
+		issues.append("Cannot select more than stack count")
 	
-	return problems
+	return issues
 
 func get_item() -> FlexItem:
 	return stack.item if stack else null
@@ -2554,26 +2554,26 @@ func execute() -> Result:
 
 ## Checks the transfer setup to make sure all conditions are met for a transfer to occur
 func validate() -> Array[String]:
-	var problems: Array[String] = []
+	var issues: Array[String] = []
 
 	# Ensure source is valid
 	if not source:
-		problems.append("Invalid source selection")
+		issues.append("Invalid source selection")
 	else:
-		problems.append_array(source.validate())
+		issues.append_array(source.validate())
 
 	# Ensure target is valid
 	if not is_instance_valid(target):
-		problems.append("Invalid target")
+		issues.append("Invalid target")
 
 	# Ensure source has items to transfer
 	if not source.get_item():
-		problems.append("Cannot transfer null item type")
+		issues.append("Cannot transfer null item type")
 
 	if not target.can_add_items(source.get_item(), source.amount):
-		problems.append("Target cannot accept items")
+		issues.append("Target cannot accept items")
 
-	return problems
+	return issues
 
 ## Conducts the transfer
 ## Expects that validation has already been done
@@ -2860,14 +2860,14 @@ func refresh():
 func get_item_container() -> ItemContainer:
 	return item_container
 
-func get_item_stack_move(item : int) -> StackMove:
+func get_item_stack_move(item : int) -> StackTransfer:
 	var stack = get_item_metadata(item)
 	var amount = 0
 	
 	if is_instance_valid(stack):
 		amount = stack.count
 	
-	return StackMove.new(stack, amount)
+	return StackTransfer.new(stack, amount)
 
 ## Gets a text representation for the stack and count
 func get_stack_text(stack : FlexStack) -> String:
@@ -2892,13 +2892,13 @@ func get_stack_tooltip(stack : FlexStack) -> String:
 ## Gets the transfer data of the selected list items as a StackTransfer
 ## object and returns it
 func get_selected_transfer_data() -> StackTransfer:
-	var stack_moves : Array[StackMove] = []
+	var stack_moves : Array[StackTransfer] = []
 
 	var selected = get_selected_items()
 		
 	for item in selected:
 		var stack : FlexStack = get_item_metadata(item)
-		var stack_move = StackMove.new(stack, stack.get_effective_count())
+		var stack_move = StackTransfer.new(stack, stack.get_effective_count())
 		stack_moves.append(stack_move)
 			
 	var transfer_data = StackTransfer.new(self, stack_moves)
@@ -2963,7 +2963,7 @@ func get_item_container() -> ItemContainer:
 	push_error("Virtual function. Implement in extended class")
 	return null
 
-func get_item_stack_move(item : int) -> StackMove:
+func get_item_stack_move(item : int) -> StackTransfer:
 	push_error("Virtual function. Implement in extended class")
 	return null
 
@@ -2987,7 +2987,7 @@ func _get_drag_data(at_position: Vector2) -> Variant:
 		if selected_items.is_empty():
 			return null
 		
-		var stack_moves : Array[StackMove] = []
+		var stack_moves : Array[StackTransfer] = []
 		
 		for selected in selected_items:
 			var stack_move = get_item_stack_move(selected)
@@ -3086,7 +3086,7 @@ var target_container : ItemContainer :
 		
 		return null
 
-var selection_data : Array[StackMove]:
+var selection_data : Array[StackTransfer]:
 	set(value):
 		selection_data = value
 		refresh_list()
@@ -3096,7 +3096,7 @@ func _ready():
 	drag_started.connect(_on_drag_started)
 
 ## Overrides the default stack text to show item price
-func get_stack_move_text(stack_move_data : StackMove) -> String:
+func get_stack_move_text(stack_move_data : StackTransfer) -> String:
 	var multiplier : float
 	
 	match(trade_type):
@@ -3133,14 +3133,14 @@ func get_item_container() -> ItemContainer:
 	return target_container
 		
 func validate():
-	var no_problems = true
+	var no_issues = true
 	
 	if(mouse_filter == MOUSE_FILTER_IGNORE):
 		push_warning("Unable to receive drop data because mouse filter is set to ignore.")
 	
-	return no_problems
+	return no_issues
 	
-func get_item_stack_move(item : int) -> StackMove:
+func get_item_stack_move(item : int) -> StackTransfer:
 	return get_item_metadata(item)
 			
 func _on_shop_opened(p_shop : Shop):
@@ -3152,7 +3152,7 @@ func _on_buy_multiplier_changed(new_value : float):
 func _on_sell_multiplier_changed(new_value : float):
 	refresh_list()
 
-func _on_selection_changed(p_selection_data : Array[StackMove]):
+func _on_selection_changed(p_selection_data : Array[StackTransfer]):
 	selection_data = p_selection_data
 		
 func _on_shop_changed(p_shop : Shop):
@@ -3314,9 +3314,9 @@ func clear():
 		child.free()
 
 func validate() -> bool:
-	var no_problems = true
+	var no_issues = true
 	
-	return no_problems
+	return no_issues
 	
 func _on_confirmed():
 	finished.emit(OK, data)
@@ -3366,7 +3366,7 @@ extends Control
 @export var amount_suffix : StringName = ")"
 
 ## The stack data that this control uses for dislaying settings
-var data : StackMove :
+var data : StackTransfer :
 	set(value):
 		if(is_instance_valid(data)):
 			data.source.count_changed.disconnect(_on_source_count_changed)
@@ -3382,7 +3382,7 @@ func get_amount():
 	return amount_slider.value
 
 ## Updates the UI display to match the stack_move_data
-func _update_display(p_data : StackMove):
+func _update_display(p_data : StackTransfer):
 	label.text = data.source.item.name
 	icon_rect.texture = data.source.item.icon
 	amount_slider.min_value = 0
@@ -3586,17 +3586,17 @@ func remove_stack_view(p_stack : FlexStack):
 		stack_views.erase.call_deferred(view) # Delay to prevent for loop issues and wait for view to actually free
 		
 func validate() -> bool:
-	var no_problems = true
+	var no_issues = true
 	
 	if item_container == null:
 		push_warning("No [item_container] set in %s" % get_path())
-		no_problems = false
+		no_issues = false
 		
 	if stack_view_template == null:
 		push_warning("No [stack_view_template] set in %s" % get_path())
-		no_problems = false
+		no_issues = false
 		
-	return no_problems
+	return no_issues
 
 func _on_stack_added(p_stack : FlexStack):
 	create_stack_view(p_stack)
@@ -3724,13 +3724,13 @@ func _ready():
 	validate()
 	
 func validate() -> bool:
-	var no_problems = true
+	var no_issues = true
 	
 	if actions == null:
 		push_warning("There is no FlexActions defined at %s to control the UI" % get_path())
-		no_problems = false
+		no_issues = false
 	
-	return no_problems
+	return no_issues
 
 func update_count_display():
 	if item_stack == null || item_stack.item == null:
@@ -26740,7 +26740,7 @@ func _ready():
 
 func _on_pressed():
 	value_control.value += value_change
-class_name CostDisplay
+class_name CostView
 extends RichTextLabel
 
 ## The view holding the items being shopped for which the cost is calculated from
@@ -26786,13 +26786,13 @@ func update_text() -> void:
 	text = text_template % cost
 	
 func validate() -> bool:
-	var no_problems := true
+	var no_issues := true
 	
 	if shop_view == null:
 		push_warning("No stock view assigned, shopping cost will not update.")
-		no_problems = false
+		no_issues = false
 		
-	return no_problems
+	return no_issues
 
 func _on_view_selected_items_changed(p_stack_views : Array[StackView]) -> void:
 	cost = calculate_cost(p_stack_views)
@@ -27934,13 +27934,13 @@ func test_get_item_count_with_tag(
 	# Cleanup to reset state
 	if p_item_container == tag_restricted_container and p_expected > 0:
 		p_item_container.clear()
-# GdUnit 4.5.0 Test Suite for CostDisplay (No Mocks, with FlexStack/FlexItem)
+# GdUnit 4.5.0 Test Suite for CostView (No Mocks, with FlexStack/FlexItem)
 extends GdUnitTestSuite
 
-class_name TestCostDisplay
+class_name TestCostView
 
 # Test subject
-var cost_display: CostDisplay
+var cost_display: CostView
 
 # Real dependencies
 var shop_view: ItemContainerView
@@ -27950,7 +27950,7 @@ var item: FlexItem
 
 # Setup before each test
 func before_test() -> void:
-	cost_display = auto_free(CostDisplay.new())
+	cost_display = auto_free(CostView.new())
 	shop_view = auto_free(ItemContainerView.new())
 	stack_view = auto_free(StackView.new())
 	item = auto_free(FlexItem.new())
@@ -28696,9 +28696,9 @@ func before():
 	_stack.parent = _container
 	
 	# Verify initial setup
-	var problems = _container.validate()
-	assert_array(problems)\
-		.append_failure_message("Container should have no validation problems")\
+	var issues = _container.validate()
+	assert_array(issues)\
+		.append_failure_message("Container should have no validation issues")\
 		.is_empty()
 
 func before_test():
@@ -28709,8 +28709,8 @@ func before_test():
 	_signal_results = []
 	
 	# Verify container state before test
-	var problems = _container.validate()
-	assert_array(problems)\
+	var issues = _container.validate()
+	assert_array(issues)\
 		.append_failure_message("Container should maintain valid state")\
 		.is_empty()
 	

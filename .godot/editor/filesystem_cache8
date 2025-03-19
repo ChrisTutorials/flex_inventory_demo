@@ -31,7 +31,7 @@ flex_list_item_data.gd::GDScript::-1::1740591397::0::1::::FlexListItemData<>RefC
 flex_state.gd::GDScript::-1::1740591397::0::1::::<>Node<>::
 transfer.gd::GDScript::-1::1740827362::0::1::::StackTransfer<>Object<>::
 item_count_changed_data.gd::GDScript::-1::1740845787::0::1::::ItemCountChangedData<>Object<>::
-stack_move.gd::GDScript::-1::1740705902::0::1::::StackMove<>Object<>::
+stack_move.gd::GDScript::-1::1740705902::0::1::::StackTransfer<>Object<>::
 trade.gd::GDScript::-1::1740591397::0::1::::Trade<>Object<>::
 ::res://addons/flex_inventory/events/::1740845576
 ::res://addons/flex_inventory/helpers/::1740591397
@@ -504,13 +504,13 @@ resource_view.tscn::PackedScene::6279765257731227812::1740879087::0::1::::<><>::
 stack_view.tscn::PackedScene::5905563722584975729::1740881906::0::1::::<><>::uid://n86nfvl4agbl::::res://addons/flex_inventory/ui/stack_view.gd<>uid://dyh51gy8sq4fq::::res://templates/flex_inventory/settings/default_actions.tres
 ::res://templates/flex_inventory/ui/shop/::1740882314
 buy_back_view.tscn::PackedScene::641891591595638795::1740823218::0::1::::<><>::uid://cihvnkle5hx0m::::res://templates/flex_inventory/ui/item_container_view.tscn<>uid://dgswtaqij3g7h::::res://addons/flex_inventory/items/flex_stack.gd<>uid://dfoiqel6lgbf7::::res://addons/flex_inventory/inventory/item_container.gd<>uid://de1ir17g0bw6s::::res://templates/flex_inventory/inventory/shop_type.tres<>uid://btgilu06tytpw::::res://templates/flex_inventory/ui/shop/cost_display.gd
-cost_display.gd::GDScript::-1::1740831233::0::1::::CostDisplay<>RichTextLabel<>::
+cost_display.gd::GDScript::-1::1740831233::0::1::::CostView<>RichTextLabel<>::
 purchase_view.tscn::PackedScene::1303303622594750988::1740882314::0::1::::<><>::uid://cihvnkle5hx0m::::res://templates/flex_inventory/ui/item_container_view.tscn<>uid://dgswtaqij3g7h::::res://addons/flex_inventory/items/flex_stack.gd<>uid://dfoiqel6lgbf7::::res://addons/flex_inventory/inventory/item_container.gd<>uid://btgilu06tytpw::::res://templates/flex_inventory/ui/shop/cost_display.gd
 shop_inventory_view.tscn::PackedScene::1116113515660903648::1740591397::0::1::::<><>::
 shop_ui.tscn::PackedScene::4985569649726776279::1740881906::0::1::::<><>::uid://daomms2x82s43::::res://addons/flex_inventory/shop/shop_ui.gd<>uid://bnf1uup4lsmly::::res://templates/flex_inventory/signals/shop_bus.tres<>uid://stlhquw164jo::::res://templates/flex_inventory/ui/shop/purchase_view.tscn<>uid://je64jahhobyx::::res://templates/flex_inventory/ui/shop/buy_back_view.tscn
 ::res://test/::1740591371
 ::res://test/flex_inventory/::1740882286
-test_cost_display.gd::GDScript::-1::1740826241::0::1::::TestCostDisplay<>GdUnitTestSuite<>::
+test_cost_display.gd::GDScript::-1::1740826241::0::1::::TestCostView<>GdUnitTestSuite<>::
 test_drag_transfer.gd::GDScript::-1::1740820881::0::1::::<>GdUnitTestSuite<>::
 test_flex_array_extensions.gd::GDScript::-1::1740591397::0::1::::<>GdUnitTestSuite<>::
 test_flex_inventory.gd::GDScript::-1::1740827551::0::1::::<>GdUnitTestSuite<>::

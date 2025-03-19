@@ -1,17 +1,10 @@
-[gd_resource type="Resource" load_steps=5 format=3 uid="uid://3f6rt1jncq85"]
+[gd_resource type="Resource" script_class="FlexInventory" load_steps=3 format=3 uid="uid://3f6rt1jncq85"]
 
 [ext_resource type="Script" uid="uid://dfoiqel6lgbf7" path="res://addons/flex_inventory/inventory/item_container.gd" id="1_fi1x0"]
-[ext_resource type="Resource" uid="uid://db5y1ie78lq5n" path="res://inventory/types/backpack_type.tres" id="3_3ih0p"]
 [ext_resource type="Script" uid="uid://ccbvkadn5e0hg" path="res://addons/flex_inventory/inventory/flex_inventory.gd" id="4_cwv8g"]
-
-[sub_resource type="Resource" id="Resource_fi1x0"]
-script = ExtResource("1_fi1x0")
-type = ExtResource("3_3ih0p")
-_slots = []
-metadata/_custom_type_script = "uid://dfoiqel6lgbf7"
 
 [resource]
 script = ExtResource("4_cwv8g")
-item_containers = [SubResource("Resource_fi1x0")]
+_item_containers = Array[ExtResource("1_fi1x0")]([])
 money = 0.0
 metadata/_custom_type_script = "uid://ccbvkadn5e0hg"
