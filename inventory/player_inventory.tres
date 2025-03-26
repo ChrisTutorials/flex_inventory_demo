@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="FlexInventory" load_steps=3 format=3 uid="uid://3f6rt1jncq85"]
+[gd_resource type="Resource" script_class="StackInventory" load_steps=5 format=3 uid="uid://3f6rt1jncq85"]
 
 [ext_resource type="Script" uid="uid://dfoiqel6lgbf7" path="res://addons/flex_inventory/inventory/item_container.gd" id="1_fi1x0"]
-[ext_resource type="Script" uid="uid://ccbvkadn5e0hg" path="res://addons/flex_inventory/inventory/flex_inventory.gd" id="4_cwv8g"]
+[ext_resource type="Script" uid="uid://cty1hwl11wwbm" path="res://addons/flex_inventory/inventory/inventory_settings.gd" id="3_ptr4k"]
+[ext_resource type="Script" uid="uid://ccbvkadn5e0hg" path="res://addons/flex_inventory/inventory/stack_inventory.gd" id="4_cwv8g"]
+
+[sub_resource type="Resource" id="Resource_fi1x0"]
+script = ExtResource("3_ptr4k")
+allow_partial_adds = true
 
 [resource]
 script = ExtResource("4_cwv8g")
-_item_containers = Array[ExtResource("1_fi1x0")]([])
+_containers = Array[ExtResource("1_fi1x0")]([])
 money = 0.0
+settings = SubResource("Resource_fi1x0")
 metadata/_custom_type_script = "uid://ccbvkadn5e0hg"
